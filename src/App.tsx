@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './components/Header'
 import Grid from './components/Grid'
-import Modal from './components/Preparation/Modal'
+import Modal from './components/Modal'
 
 function App() {
   return (

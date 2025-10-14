@@ -1,3 +1,5 @@
+import { seePreparation } from "../handlers/seePreparation"
+
 export default function Card() {
     return (
         <a href="#" className="relative block rounded-tr-3xl border border-gray-100">
@@ -22,7 +24,7 @@ export default function Card() {
                         </div>
                         </div>
                     </div>
-                <span className="mt-4 block rounded-md border border-yellow-600 bg-yellow-600 px-5 py-3 text-sm font-medium tracking-widest text-white uppercase transition-colors hover:bg-white hover:text-yellow-600" >
+                <span className="mt-4 block rounded-md border border-yellow-600 bg-yellow-600 px-5 py-3 text-sm font-medium tracking-widest text-white uppercase transition-colors hover:bg-white hover:text-yellow-600" onClick={() => seePreparation()} >
                     Veja o preparo
                 </span>
             </div>

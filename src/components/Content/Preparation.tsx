@@ -1,8 +1,6 @@
-export default function Modal() {
+export default function Preparation() {
     return (
-        <div className="fixed inset-0 z-50 grid place-content-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            
-            <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
+                    <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
                 <div className="flex items-start justify-between">
                     <div className="flex-col justify-start text-start items-start">
                         <h2 id="modalTitle" className="text-xl font-bold text-gray-900 sm:text-2xl">Modo de Preparo</h2>
@@ -53,6 +51,5 @@ export default function Modal() {
                     </ol>
                 </div>
             </div>
-        </div>
     )
 }
