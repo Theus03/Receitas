@@ -1,12 +1,17 @@
+import { useModal } from "../../hooks/useModal"
+
 export default function Preparation() {
+
+  const { closeModal } = useModal();
+
     return (
-                    <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
+            <div id="modalPreparation" className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
                 <div className="flex items-start justify-between">
                     <div className="flex-col justify-start text-start items-start">
                         <h2 id="modalTitle" className="text-xl font-bold text-gray-900 sm:text-2xl">Modo de Preparo</h2>
                         <h4 id="modalSubTitle" className="text-md font-bold text-gray-500 sm:text-2xl">Macarrão</h4>
                     </div>
-                    <button type="button" className="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none" aria-label="Close" >
+                    <button type="button" className="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none" aria-label="Close" onClick={closeModal} >
                         <svg xmlns="http://www.w3.org/2000/svg" className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -52,4 +57,4 @@ export default function Preparation() {
                 </div>
             </div>
     )
-}
+} 

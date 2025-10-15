@@ -1,6 +1,9 @@
-import { seePreparation } from "../handlers/seePreparation"
+import { useModal } from "../hooks/useModal"
 
 export default function Card() {
+
+    const { openModal } = useModal();
+
     return (
         <a href="#" className="relative block rounded-tr-3xl border border-gray-100">
             <span className="absolute -top-px -right-px rounded-tr-3xl rounded-bl-3xl bg-rose-800 px-6 py-4 font-medium tracking-widest text-white uppercase"> Salvar </span>
@@ -24,7 +27,7 @@ export default function Card() {
                         </div>
                         </div>
                     </div>
-                <span className="mt-4 block rounded-md border border-yellow-600 bg-yellow-600 px-5 py-3 text-sm font-medium tracking-widest text-white uppercase transition-colors hover:bg-white hover:text-yellow-600" onClick={() => seePreparation()} >
+                <span className="mt-4 block rounded-md border border-yellow-600 bg-yellow-600 px-5 py-3 text-sm font-medium tracking-widest text-white uppercase transition-colors hover:bg-white hover:text-yellow-600" onClick={() => openModal('Preparation')} >
                     Veja o preparo
                 </span>
             </div>

@@ -1,4 +1,4 @@
 export type Modal = {
-    type: "Preparation" | "New",
+    type: "Preparation" | "New" | null,
     onShow: boolean
 }
