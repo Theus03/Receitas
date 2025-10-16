@@ -12,23 +12,23 @@ export default function Filters() {
                 </summary>
                 <div className="z-50 w-64 divide-y divide-gray-300 rounded border border-gray-300 bg-white shadow-sm group-open:absolute group-open:start-0 group-open:top-8">
                     <div className="flex items-center justify-between px-3 py-2">
-                        <span className="text-sm text-gray-700"> 0 Selected </span>
-                        <button type="button" className="text-sm text-gray-700 underline transition-colors hover:text-gray-900" > Reset </button>
+                        <span className="text-sm text-gray-700"> 0 Selecionado </span>
+                        <button type="button" className="text-sm text-gray-700 underline transition-colors hover:text-gray-900" > Limpar </button>
                     </div>
                     <fieldset className="p-3">
                         <legend className="sr-only">Checkboxes</legend>
                         <div className="flex flex-col items-start gap-3">
                         <label htmlFor="Option1" className="inline-flex items-center gap-3">
-                            <input type="checkbox" className="size-5 rounded border-gray-300 shadow-sm" id="Option1" />
-                            <span className="text-sm font-medium text-gray-700"> Option 1 </span>
+                            <input type="checkbox" className="size-5 rounded border-gray-300 shadow-sm" id="categoriaMassas" />
+                            <span className="text-sm font-medium text-gray-700"> Massas </span>
                         </label>
                         <label htmlFor="Option2" className="inline-flex items-center gap-3">
-                            <input type="checkbox" className="size-5 rounded border-gray-300 shadow-sm" id="Option2" />
-                            <span className="text-sm font-medium text-gray-700"> Option 2 </span>
+                            <input type="checkbox" className="size-5 rounded border-gray-300 shadow-sm" id="categoriaFrango" />
+                            <span className="text-sm font-medium text-gray-700">Frango </span>
                         </label>
                         <label htmlFor="Option3" className="inline-flex items-center gap-3">
-                            <input type="checkbox" className="size-5 rounded border-gray-300 shadow-sm" id="Option3" />
-                            <span className="text-sm font-medium text-gray-700"> Option 3 </span>
+                            <input type="checkbox" className="size-5 rounded border-gray-300 shadow-sm" id="categoriaCarne" />
+                            <span className="text-sm font-medium text-gray-700"> Carne </span>
                         </label>
                         </div>
                     </fieldset>
@@ -45,20 +45,20 @@ export default function Filters() {
                 </summary>
                 <div className="z-40 w-64 divide-y divide-gray-300 rounded border border-gray-300 bg-white shadow-sm group-open:absolute group-open:start-0 group-open:top-8" >
                 <div className="flex items-center justify-between px-3 py-2">
-                    <span className="text-sm text-gray-700"> Max price is $600 </span>
+                    <span className="text-sm text-gray-700"> Tempo de Preparo </span>
                     <button type="button" className="text-sm text-gray-700 underline transition-colors hover:text-gray-900" >
-                        Reset
+                        Limpar
                     </button>
                 </div>
 
                 <div className="flex items-center gap-3 p-3">
-                    <label htmlFor="MinPrice">
-                        <span className="text-sm text-gray-700"> Min </span>
-                        <input type="number" id="MinPrice" value="0" className="mt-0.5 w-full rounded border-gray-300 shadow-sm sm:text-sm" />
+                    <label htmlFor="Hours">
+                        <span className="text-sm text-gray-700"> Horas </span>
+                        <input type="number" id="Hours" value="00" className="mt-0.5 w-full rounded border-gray-300 shadow-sm sm:text-sm" />
                     </label>
-                    <label htmlFor="MaxPrice">
-                        <span className="text-sm text-gray-700"> Max </span>
-                        <input type="number" id="MaxPrice" value="600" className="mt-0.5 w-full rounded border-gray-300 shadow-sm sm:text-sm" />
+                    <label htmlFor="Minutes">
+                        <span className="text-sm text-gray-700"> Minutos </span>
+                        <input type="number" id="Minutes" value="30" className="mt-0.5 w-full rounded border-gray-300 shadow-sm sm:text-sm" />
                     </label>
                 </div>
                 </div>
