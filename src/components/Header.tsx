@@ -1,6 +1,10 @@
+import { useModal } from "../hooks/useModal";
 import Filters from "./Filters";
 
 export default function Header() {
+
+    const {openModal} = useModal();
+
     return (
         <header className="bg-white">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -17,7 +21,7 @@ export default function Header() {
                         <nav aria-label="Global" className="hidden md:block"> <Filters /> </nav>
                         <div className="flex flex-wrap items-center gap-4">
                             <div className="sm:flex sm:gap-4">
-                                <a className="rounded-md bg-yellow-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm" href="#" > Nova Receita </a>
+                                <button className="rounded-md bg-yellow-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm" onClick={() => openModal("New")} > Nova Receita </button>
                             </div>
                             <div className="block md:hidden">
                                 <button className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75" >
