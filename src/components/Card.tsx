@@ -1,8 +1,15 @@
+import { useEffect } from "react";
 import { useModal } from "../hooks/useModal"
+import apiService from "../services/apiService";
 
 export default function Card() {
 
     const { openModal } = useModal();
+
+    useEffect(() => {
+        const response = apiService();
+        console.log(response)
+    })
 
     return (
         <a href="#" className="relative block rounded-tr-3xl border border-gray-100">
