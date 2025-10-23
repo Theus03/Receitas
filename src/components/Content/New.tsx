@@ -1,4 +1,6 @@
 import { useModal } from "../../hooks/useModal"
+import InputText from "../InputText";
+import Select from "../Select";
 
 export default function New() {
 
@@ -15,27 +17,48 @@ export default function New() {
                         </svg>
                     </button>
                 </div>
-
                 <div className="mt-4">
                     <p className="text-pretty text-gray-700 text-start">Adicione sua nova receita, incluindo seus dados básicos, ingredientes e modo de preparo.</p>
-                    <div className="flex gap-2 mt-6">
-                        <label htmlFor="txtNomeReceita" className="relative">
-                            <input type="text" id="txtNomeReceita" placeholder="" className="p-4 peer mt-1 w-full rounded border border-gray-300 shadow-sm sm:text-sm" />
-                            <span className="absolute inset-y-0 start-3 -translate-y-5 bg-white px-1 text-sm font-medium text-gray-700 transition-transform peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-5" >
-                                Nome da Receita
-                            </span>
-                        </label>
-                        <label htmlFor="txtTipoReceita">
-                            <span className="text-sm font-medium text-gray-700"> Tipo Receita </span>
-                            <select name="txtTipoReceita" id="txtTipoReceita" className="p-2 mt-0.5 w-full rounded border border-gray-300 shadow-sm sm:text-sm">
-                                <option value="">Por favor, selecione</option>
-                                <option value="Massas">Massas</option>
-                                <option value="Massas">Doces</option>
-                            </select>
-                        </label>
-                    </div>          
+                    <div className="flex flex-wrap gap-4 mt-6">
+                        <InputText id="txtNomeReceita" title="Nome da Receita" />
+                        <Select id="txtTipoReceita" options={["Massas", "Doces"]} title="Tipo de Receita" />
+                    </div>
+                    <div id="containerModoPreparo" className="mt-4 border border-gray-200 rounded-2xl p-4 shadow-sm bg-white">
+                        <h2 className="text-base font-semibold text-start text-gray-700 mb-3">Modo de Preparo</h2>
+                        <div className="flex gap-2">
+                            <input type="text" placeholder="Adicione uma etapa..." className="flex-1 rounded border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-rose-800 focus:ring-rose-800" />
+                            <button type="button" className="p-2 bg-rose-800 text-white rounded-lg hover:bg-rose-700 transition-colors" > + </button>
+                        </div>
+                        <ul className="mt-3 space-y-2">
+                            <li className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2 text-sm bg-gray-50 hover:bg-gray-100 transition-colors">
+                                <span className="text-gray-700">Ferver a água</span>
+                                <button type="button" className="text-gray-500 hover:text-rose-600 transition-colors" >🗑️ </button>
+                            </li>
+                            <li className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2 text-sm bg-gray-50 hover:bg-gray-100 transition-colors">
+                                <span className="text-gray-700">Adicionar o macarrão</span>
+                                <button type="button" className="text-gray-500 hover:text-rose-600 transition-colors" > 🗑️ </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="containerIngredientes" className="mt-4 border border-gray-200 rounded-2xl p-4 shadow-sm bg-white">
+                        <h2 className="text-base font-semibold text-start text-gray-700 mb-3">Ingredientes</h2>
+                        <div className="flex gap-2">
+                            <input type="text" placeholder="Nome" className="flex-1 rounded border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-rose-800 focus:ring-rose-800" />
+                            <input type="text" placeholder="Quantidade" className="flex-1 rounded border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-rose-800 focus:ring-rose-800" />
+                            <button type="button" className="p-2 bg-rose-800 text-white rounded-lg hover:bg-rose-700 transition-colors" > + </button>
+                        </div>
+                        <ul className="mt-3 space-y-2">
+                            <li className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2 text-sm bg-gray-50 hover:bg-gray-100 transition-colors">
+                                <span className="text-gray-700">1x Creme de Leite</span>
+                                <button type="button" className="text-gray-500 hover:text-rose-600 transition-colors" >🗑️ </button>
+                            </li>
+                            <li className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2 text-sm bg-gray-50 hover:bg-gray-100 transition-colors">
+                                <span className="text-gray-700">1x Macarrão</span>
+                                <button type="button" className="text-gray-500 hover:text-rose-600 transition-colors" > 🗑️ </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
                 <footer className="mt-6 flex justify-end gap-2">
                     <button type="button" className="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200" onClick={closeModal}>Cancelar</button>
                     <button type="button" className="rounded bg-yellow-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-yellow-700">Salvar</button>
