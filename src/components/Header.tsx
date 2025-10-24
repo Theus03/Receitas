@@ -1,5 +1,6 @@
 import { useModal } from "../hooks/useModal";
 import Filters from "./Filters";
+import InputText from "./InputText";
 
 export default function Header() {
 
@@ -10,10 +11,11 @@ export default function Header() {
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-wrap h-16 items-center justify-between">
                     <div className="flex-1 md:flex md:items-center md:gap-12">
-                        <a className="flex items-center" href="#">
+                        <a className="flex items-center gap-2" href="#">
                             <span className="sr-only">Home</span>
-                            <h1 className="text-6xl">🍛</h1>
-                            <h1 className="text-2xl font-bold mt-3">Receitas</h1>
+                            <img src="cook-hat.png" alt="Logo" width={60} />
+                            <h1 className="text-6xl"></h1>
+                            <h1 className="text-2xl font-bold">Receitas</h1>
                         </a>
                     </div>
 
@@ -21,7 +23,7 @@ export default function Header() {
                         <nav aria-label="Global" className="hidden md:block"> <Filters /> </nav>
                         <div className="flex flex-wrap items-center gap-4">
                             <div className="sm:flex sm:gap-4">
-                                <button className="rounded-md bg-yellow-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm" onClick={() => openModal("New")} > Nova Receita </button>
+                                <button className="rounded-md bg-yellow-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm cursor-pointer" onClick={() => openModal("New")} > Nova Receita </button>
                             </div>
                             <div className="block md:hidden">
                                 <button className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75" >
