@@ -1,6 +1,5 @@
 import { useModal } from "../hooks/useModal";
 import Filters from "./Filters";
-import InputText from "./InputText";
 
 export default function Header() {
 
