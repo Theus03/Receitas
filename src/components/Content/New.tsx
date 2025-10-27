@@ -58,10 +58,43 @@ export default function New() {
                             </li>
                         </ul>
                     </div>
+                    <div id="containerTempoEstimado" className="mt-4 border border-gray-200 rounded-2xl p-4 shadow-sm bg-white">
+                        <h2 className="text-base font-semibold text-start text-gray-700 mb-3">TempoEstimado</h2>
+                          <div className="flex items-center gap-2 mb-3">
+    <label htmlFor="tempoEstimado" className="text-sm text-gray-600">Tempo estimado:</label>
+    <input 
+      type="number" 
+      id="tempoEstimado"
+      placeholder="Ex: 15" 
+      className="w-20 rounded border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-rose-800 focus:ring-rose-800"
+    />
+    <span className="text-gray-500 text-sm">min</span>
+  </div>
+                    </div>
                 </div>
-                <footer className="mt-6 flex justify-end gap-2">
-                    <button type="button" className="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200" onClick={closeModal}>Cancelar</button>
-                    <button type="button" className="rounded bg-yellow-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-yellow-700">Salvar</button>
+                <footer className="mt-6 flex justify-between gap-2">
+                    <div className="mt-4">
+  <label 
+    htmlFor="uploadFile" 
+    className="flex items-center justify-center gap-2 cursor-pointer px-4 py-2 bg-rose-800 text-white rounded-lg shadow-sm hover:bg-rose-700 transition-colors text-sm font-medium"
+  >
+    📁 Adicionar Imagem
+  </label>
+  <input 
+    id="uploadFile" 
+    type="file" 
+    className="hidden" 
+    onChange={(e) => {
+      if (e.target.files && e.target.files.length > 0) {
+        console.log("Arquivo selecionado:", e.target.files[0].name);
+      }
+    }}
+  />
+</div>
+                    <div className="mt-6 flex justify-end gap-2">
+                        <button type="button" className="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200" onClick={closeModal}>Cancelar</button>
+                        <button type="button" className="rounded bg-yellow-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-yellow-700">Salvar</button>
+                    </div>
                 </footer>
             </div>
         </div>
