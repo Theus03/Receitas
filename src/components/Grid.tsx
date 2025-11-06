@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import Card from "./Card";
 import type { FilterRevenues } from "../types/FilterRevenues";
 import { useGetAllRevenues } from "../services/useGetAllRevenues";
+import Loading from "./Loading";
 
 export default function Grid() {
   const filters: FilterRevenues = useMemo(
@@ -16,7 +17,7 @@ export default function Grid() {
 
   const { data, isLoading, isError } = useGetAllRevenues(filters);
 
-  if (isLoading) return <div>Carregando receitas...</div>;
+  if (isLoading) return <Loading/>
   if (isError) return <div>Erro ao carregar receitas 😕</div>;
 
   return (
