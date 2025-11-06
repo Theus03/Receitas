@@ -1,22 +1,15 @@
-import { useEffect } from "react";
 import { useModal } from "../hooks/useModal"
-import apiService from "../services/apiService";
+import type { Revenues } from "../types/Revenues";
 
-export default function Card() {
-
+export default function Card(revenue: Revenues) {
     const { openModal } = useModal();
-
-    useEffect(() => {
-        const response = apiService();
-        console.log(response)
-    })
 
     return (
         <a href="#" className="relative block rounded-tr-3xl border border-gray-100">
             <span className="absolute -top-px -right-px rounded-tr-3xl rounded-bl-3xl bg-rose-800 px-6 py-4 font-medium tracking-widest text-white uppercase"> Salvar </span>
-            <img src="https://images.unsplash.com/photo-1571175534150-72cd2b5a6039?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food Image" className="h-80 w-full rounded-tr-3xl object-cover"/>
-            <div className="p-4 text-center">
-                <strong className="text-xl font-medium text-gray-900"> Macarrão da Quel </strong>
+            <img src={revenue.imagem} alt="Food Image" className="h-80 w-full rounded-tr-3xl object-cover"/>
+                <div className="p-4 text-center">
+                <strong className="text-xl font-medium text-gray-900"> {revenue.nome} </strong>
                 <div className="mt-2">
                     <div className="mt-2 flex items-center gap-8 text-xs">
                         <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">

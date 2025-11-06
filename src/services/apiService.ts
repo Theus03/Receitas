@@ -1,20 +1,18 @@
-export default async function apiService() {
-    try {
-        const URL_API = "https://api-core-receitas.onrender.com";
-        const response = await fetch(`${URL_API}/Receitas/ListarReceitas`, {
-            method: "GET",
+
+export const api = {
+    get: async(url: string) => {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Erro ao buscar dados.");
+        return res.json();
+    },
+    post: async (url: string, body: any) => {
+        const res = await fetch(url , {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
         });
 
-        if (!response.ok) {
-            throw new Error("Erro ao buscar dados da API");
-        }
-
-        const data = await response.json();
-        console.log(data);
-
-        return data;
-    } catch (error) {
-        console.error("Erro: Problemas ao tentar se comunicar com a API.", error);
-        return null;
+        if (!res.ok) throw new Error("Erro ao enviar dados.");
+        return res.json();
     }
 }
