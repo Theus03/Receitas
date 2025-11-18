@@ -1,8 +1,11 @@
 import { useModal } from "../hooks/useModal"
+import { useGetAllTypeRevenues } from "../services/useGetTypeRevenues";
 import type { Revenues } from "../types/Revenues";
 
 export default function Card(revenue: Revenues) {
     const { openModal } = useModal();
+
+    const typeRevenues = useGetAllTypeRevenues().data;
 
     return (
         <a href="#" className="relative block rounded-tr-3xl border border-gray-100">
@@ -22,7 +25,7 @@ export default function Card(revenue: Revenues) {
                         <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-utensils-icon lucide-utensils"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>                            <div className="mt-1.5 sm:mt-0">
                                 <p className="text-gray-500">Tipo</p>
-                                <p className="font-medium">Massa</p>
+                                <p className="font-medium">{typeRevenues?.find(i => i.idTipoReceita == revenue.idTipoReceita)?.tipoReceita}</p>
                             </div>
                         </div>
                         </div>
