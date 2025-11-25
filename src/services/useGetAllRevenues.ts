@@ -7,7 +7,6 @@ export function useGetAllRevenues(filtros: FilterRevenues) {
     return useQuery<Revenues[]>({
         queryKey: ['receitas', JSON.stringify(filtros)],
         queryFn: async () => {
-            console.log("🔥 Chamando API de receitas...");
             return await api.post(`${import.meta.env.VITE_URL_API}/Receitas/ListarReceitas`, filtros);
         },
         placeholderData: keepPreviousData,

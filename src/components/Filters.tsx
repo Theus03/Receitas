@@ -1,7 +1,12 @@
+import { useGetAllTypeRevenues } from "../services/useGetTypeRevenues";
+import type { TypeRevenues } from "../types/TypeRevenues";
+
 export default function Filters() {
+
+  const typeRevenues: TypeRevenues[] | undefined = useGetAllTypeRevenues().data;
+
   return (
     <div className="relative z-40 flex flex-wrap items-center gap-4 sm:gap-6">
-      {/* 🔍 Campo de Pesquisa */}
       <label htmlFor="Search" className="relative block w-full sm:w-72">
         <input
           type="text"
@@ -37,7 +42,6 @@ export default function Filters() {
         </button>
       </label>
 
-      {/* 🧩 Categorias */}
       <details className="group relative cursor-pointer">
         <summary className="flex items-center gap-2 h-10 px-1 border-b-2 border-gray-300 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 focus-within:border-rose-800 [&::-webkit-details-marker]:hidden">
           <span> Categorias </span>
@@ -68,7 +72,7 @@ export default function Filters() {
 
           <fieldset className="p-3">
             <div className="flex flex-col items-start gap-3">
-              {["Massas", "Frango", "Carne"].map((cat, index) => (
+              {typeRevenues?.map((cat, index) => (
                 <label
                   key={index}
                   htmlFor={`categoria-${cat}`}
@@ -79,7 +83,7 @@ export default function Filters() {
                     id={`categoria-${cat}`}
                     className="h-4 w-4 rounded border-gray-300 shadow-sm"
                   />
-                  <span className="text-sm font-medium text-gray-700">{cat}</span>
+                  <span className="text-sm font-medium text-gray-700">{cat.tipoReceita}</span>
                 </label>
               ))}
             </div>
@@ -87,7 +91,6 @@ export default function Filters() {
         </div>
       </details>
 
-      {/* ⏱️ Tempo Total */}
       <details className="group relative cursor-pointer">
         <summary className="flex items-center gap-2 h-10 px-1 border-b-2 border-gray-300 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 focus-within:border-rose-800 [&::-webkit-details-marker]:hidden">
           <span> Tempo Total </span>

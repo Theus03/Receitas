@@ -6,7 +6,6 @@ export function useGetAllTypeRevenues() {
     return useQuery<TypeRevenues[]>({
         queryKey: ['tipos-receitas'],
         queryFn: async () => {
-            console.log("🔥 Chamando API de receitas...");
             return await api.get(`${import.meta.env.VITE_URL_API}/Receitas/ListarTiposReceitas`);
         },
         placeholderData: keepPreviousData,
