@@ -1,6 +1,15 @@
 import { useModal } from "../../hooks/useModal"
+import type { PreparationMode } from "../../types/PreparationMode";
+import type { Revenues } from "../../types/Revenues";
 
-export default function Preparation() {
+
+type PreparationProps = {
+    preparation: PreparationMode;
+    revenue?: Revenues;
+};
+export default function Preparation({ preparation, revenue }: PreparationProps){
+
+console.log(revenue);
 
   const { closeModal } = useModal();
 
@@ -9,7 +18,7 @@ export default function Preparation() {
                 <div className="flex items-start justify-between">
                     <div className="flex-col justify-start text-start items-start">
                         <h2 id="modalTitle" className="text-xl font-bold text-gray-900 sm:text-2xl">Modo de Preparo</h2>
-                        <h4 id="modalSubTitle" className="text-md font-bold text-gray-500 sm:text-2xl">Macarrão</h4>
+                        <h4 id="modalSubTitle" className="text-md font-bold text-gray-500 sm:text-2xl">{revenue?.nome}</h4>
                     </div>
                     <button type="button" className="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none" aria-label="Close" onClick={closeModal} >
                         <svg xmlns="http://www.w3.org/2000/svg" className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" >

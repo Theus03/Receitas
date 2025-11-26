@@ -33,7 +33,7 @@ export default function Card(revenue: Revenues) {
                         </div>
                         </div>
                     </div>
-                <span className="mt-4 block rounded-md border border-yellow-600 bg-yellow-600 px-5 py-3 text-sm font-medium tracking-widest text-white uppercase transition-colors hover:bg-white hover:text-yellow-600" onClick={() => openModal('Preparation')} >
+                <span className="mt-4 block rounded-md border border-yellow-600 bg-yellow-600 px-5 py-3 text-sm font-medium tracking-widest text-white uppercase transition-colors hover:bg-white hover:text-yellow-600" onClick={() => openModal('Preparation', preparationMode, revenue)} >
                     Veja o preparo
                 </span>
             </div>
