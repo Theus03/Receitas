@@ -11,7 +11,8 @@ export default function Card(revenue: Revenues) {
     const preparationMode: PreparationMode | undefined  = useGetPreparationMode(revenue.idReceita).data;
 
     return (
-        <a href="#" className="relative block rounded-tr-3xl border border-gray-100">
+        <a href="#" className="relative block rounded-tr-3xl border border-gray-100 transition-all duration-300
+    hover:-translate-y-[2px] hover:shadow-sm/20 focus:-translate-y-[2px] focus:shadow-sm/20 ">
             <span className="absolute -top-px -right-px rounded-tr-3xl rounded-bl-3xl bg-rose-800 px-6 py-4 font-medium tracking-widest text-white uppercase"> Salvar </span>
             <img src={revenue.imagem} alt="Food Image" className="h-80 w-full rounded-tr-3xl object-cover"/>
                 <div className="p-4 text-center">
