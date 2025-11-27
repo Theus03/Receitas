@@ -3,7 +3,7 @@ export type PreparationMode = {
     dataCriacao: Date;
     idReceita: number;
     qtdeEtapas: number;
-    instrucoesPreparo:PreparationModeItem;
+    instrucoesPreparo:PreparationModeItem[];
     ingredientes: IngredientsItem;
     tempo: string;
 }

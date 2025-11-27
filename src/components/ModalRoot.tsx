@@ -10,8 +10,14 @@ export default function ModalRoot() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      {modal.type === "Preparation" && <Preparation />}
-      {modal.type === "New" && <New/>}
+      {modal.type === "Preparation" && (
+        <Preparation
+          preparation={modal.preparationMode!}
+          revenue={modal.revenue!}
+        />
+      )}
+
+      {modal.type === "New" && <New />}
     </div>
   );
 }

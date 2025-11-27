@@ -4,12 +4,12 @@ import type { Revenues } from "../../types/Revenues";
 
 
 type PreparationProps = {
-    preparation: PreparationMode;
+    preparation?: PreparationMode;
     revenue?: Revenues;
 };
-export default function Preparation({ preparation, revenue }: PreparationProps){
+export default function Preparation({ revenue, preparation }: PreparationProps){
 
-console.log(revenue);
+console.log(preparation);
 
   const { closeModal } = useModal();
 
@@ -27,41 +27,22 @@ console.log(revenue);
                     </button>
                 </div>
                 <div className="mt-4">
-                    <p className="text-pretty text-gray-700 text-start"> Segue o passo a passo do modo de preparo desse delicioso Macarrão</p>
+                    <p className="text-pretty text-gray-700 text-start"> Segue o passo a passo do modo de preparo dessa deliciosa receita.</p>
                     <ol className="relative text-start mt-6 mb-6 space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200">
-                      <li className="relative -ms-4 flex text-start gap-4">
-                        <span className="size-8 shrink-0 rounded-full bg-rose-800 text-center text-white text-lg pt-0.6">1</span>
-                        <div className="-mt-2">
-                          <h3 className="text-lg font-bold text-gray-900">Kickoff</h3>
-                          <time className="text-xs/none font-medium text-gray-700">12/02/2025</time>
-                          <p className="mt-0.5 text-sm text-gray-700">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga officiis tempora ipsum
-                            adipisci tenetur sunt quae exercitationem sed pariatur porro!
-                          </p>
-                        </div>
-                      </li>
-                      <li className="relative -ms-4 flex text-start gap-4">
-                        <span className="size-8 shrink-0 rounded-full bg-rose-800 text-center text-white text-lg pt-0.6">2</span>
-                        <div className="-mt-2">
-                          <h3 className="text-lg font-bold text-gray-900">First Milestone</h3>
-                          <time className="text-xs/none font-medium text-gray-700">15/03/2025</time>
-                          <p className="mt-0.5 text-sm text-gray-700">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga officiis tempora ipsum
-                            adipisci tenetur sunt quae exercitationem sed pariatur porro!
-                          </p>
-                        </div>
-                      </li>
-                      <li className="relative -ms-4 flex text-start gap-4">
-                        <span className="size-8 shrink-0 rounded-full bg-rose-800 text-center text-white text-lg pt-0.6">3</span>
-                        <div className="-mt-2">
-                          <h3 className="text-lg font-bold text-gray-900">Launch</h3>
-                          <time className="text-xs/none font-medium text-gray-700">24/04/2025</time>
-                          <p className="mt-0.5 text-sm text-gray-700">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga officiis tempora ipsum
-                            adipisci tenetur sunt quae exercitationem sed pariatur porro!
-                          </p>
-                        </div>
-                      </li>
+                      {
+                        preparation?.instrucoesPreparo?.map(i => (
+                          <li className="relative -ms-4 flex text-start gap-4">
+                            <span className="size-8 shrink-0 rounded-full bg-rose-800 text-center text-white text-lg pt-0.6">{i.etapa}</span>
+                            <div className="-mt-2">
+                              <h3 className="text-lg font-bold text-gray-900">{i.descricao}</h3>
+                              <p className="mt-0.5 text-sm text-gray-700">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga officiis tempora ipsum
+                                adipisci tenetur sunt quae exercitationem sed pariatur porro!
+                              </p>
+                            </div>
+                          </li>
+                        ))
+                      }
                     </ol>
                 </div>
             </div>
