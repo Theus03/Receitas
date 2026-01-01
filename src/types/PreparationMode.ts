@@ -4,7 +4,7 @@ export type PreparationMode = {
     idReceita: number;
     qtdeEtapas: number;
     instrucoesPreparo:PreparationModeItem[];
-    ingredientes: IngredientsItem;
+    ingredientes: IngredientsItem[];
     tempo: string;
 }
 

@@ -9,7 +9,6 @@ export default function Card(revenue: Revenues) {
 
     const typeRevenues = useGetAllTypeRevenues().data;
     const preparationMode: PreparationMode | undefined  = useGetPreparationMode(revenue.idReceita).data;
-
     return (
         <a href="#" className="relative block rounded-tr-3xl border border-gray-100 transition-all duration-300
     hover:-translate-y-[2px] hover:shadow-sm/20 focus:-translate-y-[2px] focus:shadow-sm/20 ">
