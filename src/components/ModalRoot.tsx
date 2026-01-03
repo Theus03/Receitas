@@ -13,7 +13,7 @@ export default function ModalRoot() {
       {modal.type === "Preparation" && (
         <Preparation
           preparation={modal.preparationMode!}
-          revenue={modal.revenue!}
+          recipe={modal.recipe!}
         />
       )}
 

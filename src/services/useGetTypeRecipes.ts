@@ -1,9 +1,9 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { api } from "./apiService";
-import type { TypeRevenues } from "../types/TypeRevenues";
+import type { TypeRecipes } from "../types/TypeRecipes";
 
-export function useGetAllTypeRevenues() {
-    return useQuery<TypeRevenues[]>({
+export function useGetAllTypeRecipes() {
+    return useQuery<TypeRecipes[]>({
         queryKey: ['tipos-receitas'],
         queryFn: async () => {
             return await api.get(`${import.meta.env.VITE_URL_API}/Receitas/ListarTiposReceitas`);

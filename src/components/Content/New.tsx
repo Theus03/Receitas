@@ -12,7 +12,7 @@ export default function New() {
                 <div className="flex items-start justify-between">
                     <h2 id="modalTitle" className="text-xl font-bold text-gray-900 sm:text-2xl">Nova Receita</h2>
                     <button type="button" className="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none" aria-label="Close" >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => {closeModal()}} >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="size-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => {closeModal()}} >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -98,7 +98,7 @@ export default function New() {
   <div className="flex w-full gap-2 sm:w-auto">
     <button
       type="button"
-      className="flex-1 rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+      className="flex-1 rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 cursor-pointer"
       onClick={closeModal}
     >
       Cancelar
@@ -106,7 +106,7 @@ export default function New() {
 
     <button
       type="button"
-      className="flex-1 rounded bg-yellow-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-yellow-700"
+      className="flex-1 rounded bg-yellow-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-yellow-700 cursor-pointer"
     >
       Salvar
     </button>

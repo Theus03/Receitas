@@ -1,12 +1,12 @@
 // ✅ Grid.tsx
 import { useMemo } from "react";
 import Card from "./Card";
-import type { FilterRevenues } from "../types/FilterRevenues";
-import { useGetAllRevenues } from "../services/useGetAllRevenues";
+import type { FilterRecipes } from "../types/FilterRecipes";
+import { useGetAllRecipes } from "../services/useGetAllRecipes";
 import Loading from "./Loading";
 
 export default function Grid() {
-  const filters: FilterRevenues = useMemo(
+  const filters: FilterRecipes = useMemo(
     () => ({
       nome: "",
       tempo: "",
@@ -15,7 +15,7 @@ export default function Grid() {
     []
   );
 
-  const { data, isLoading, isError } = useGetAllRevenues(filters);
+  const { data, isLoading, isError } = useGetAllRecipes(filters);
 
   if (isLoading) return <Loading/>
   if (isError) return <div>Erro ao carregar receitas 😕</div>;

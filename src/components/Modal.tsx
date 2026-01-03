@@ -17,7 +17,7 @@ export default function Modal() {
       {modal.type === "Preparation" && modal.preparationMode ? (
         <Preparation
           preparation={modal.preparationMode}
-          revenue={modal.revenue!}
+          recipe={modal.recipe!}
         />
       ) : null}
     </div>

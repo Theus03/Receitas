@@ -1,4 +1,4 @@
-export type TypeRevenues = {
+export type TypeRecipes = {
     idTipoReceita: number;
     dataCriacao: Date;
     tipoReceita: string;

@@ -1,13 +1,13 @@
 import { useModal } from "../../hooks/useModal"
 import type { PreparationMode } from "../../types/PreparationMode";
-import type { Revenues } from "../../types/Revenues";
+import type { Recipes } from "../../types/Recipes";
 
 
 type PreparationProps = {
     preparation?: PreparationMode;
-    revenue?: Revenues;
+    recipe?: Recipes;
 };
-export default function Preparation({ revenue, preparation }: PreparationProps){
+export default function Preparation({ recipe, preparation }: PreparationProps){
 
   const { closeModal } = useModal();
   const ingredientes = preparation?.ingredientes ?? [];
@@ -19,9 +19,9 @@ export default function Preparation({ revenue, preparation }: PreparationProps){
       <div className="flex items-start justify-between">
         <div className="flex-col items-start text-start">
           <h2 id="modalTitle" className="text-xl font-bold text-gray-900 sm:text-2xl">Modo de Preparo</h2>
-          <h4 id="modalSubTitle" className="text-md font-bold text-gray-500">{revenue?.nome}</h4>
+          <h4 id="modalSubTitle" className="text-md font-bold text-gray-500">{recipe?.nome}</h4>
         </div>
-        <button type="button" className="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none" aria-label="Close" onClick={closeModal}>
+        <button type="button" className="-me-4 -mt-4 rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-600 focus:outline-none cursor-pointer" aria-label="Close" onClick={closeModal}>
         <svg xmlns="http://www.w3.org/2000/svg" className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>

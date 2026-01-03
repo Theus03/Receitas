@@ -1,9 +1,9 @@
-import { useGetAllTypeRevenues } from "../services/useGetTypeRevenues";
-import type { TypeRevenues } from "../types/TypeRevenues";
+import { useGetAllTypeRecipes } from "../services/useGetTypeRecipes";
+import type { TypeRecipes } from "../types/TypeRecipes";
 
 export default function Filters() {
 
-  const typeRevenues: TypeRevenues[] | undefined = useGetAllTypeRevenues().data;
+  const typeRecipes: TypeRecipes[] | undefined = useGetAllTypeRecipes().data;
 
   return (
     <div className="relative z-40 flex flex-wrap items-center gap-4 sm:gap-6">
@@ -72,7 +72,7 @@ export default function Filters() {
 
           <fieldset className="p-3">
             <div className="flex flex-col items-start gap-3">
-              {typeRevenues?.map((cat, index) => (
+              {typeRecipes?.map((cat, index) => (
                 <label
                   key={index}
                   htmlFor={`categoria-${cat}`}

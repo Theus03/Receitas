@@ -1,9 +1,9 @@
 import type { PreparationMode } from "./PreparationMode"
-import type { Revenues } from "./Revenues"
+import type { Recipes } from "./Recipes"
 
 export type Modal = {
     type: "Preparation" | "New" | null,
     onShow: boolean,
-    revenue: Revenues | undefined | null,
+    recipe: Recipes | undefined | null,
     preparationMode: PreparationMode | undefined | null
 }
